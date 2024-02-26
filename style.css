@@ -1,0 +1,177 @@
+/* Theme Name: wp-starter 
+   ======================================================================
+*/
+
+
+/* The Basics
+   ======================================================================
+*/
+
+body {
+	margin: 0 !important;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+#content a {
+	text-decoration: underline;
+}
+
+#content {
+	padding: 0 15px;
+}
+
+/* Navigation
+   ======================================================================
+*/
+
+#main-navigation {
+	display: flex; 
+	justify-content: space-between;
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	padding: 15px;
+	z-index: 99999;
+	background: white;
+}
+
+.container-narrow {
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+#menu-primary {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+#menu-primary li {
+	padding-left: 10px;
+}
+
+.mobile-navigation {
+	padding: 50px;
+	width: 100%;
+	background: red;
+	position: fixed;
+	top:0;
+	right: 110vw;
+	transition: right 0.4s ease;
+	height: 100vh;
+	z-index: 9999;
+}
+
+.mobile-navigation.visible { 
+	right: 0;
+}
+
+#main-navigation-right {
+	display: flex;
+}
+
+#toggle-menu {
+	cursor: pointer;
+}
+
+@media (max-width: 992px) {
+	#menu-primary {
+		display: none;
+	}
+	#toggle-menu {
+		display: flex;
+	}
+}
+
+@media (min-width: 993px) {
+	#menu-primary {
+		display: flex;
+	}
+	#toggle-menu {
+		display: none;
+	}
+	.mobile-navigation {
+		display: none;
+	}
+}
+
+
+/* Gutenberg / Content
+   ======================================================================
+*/
+
+@media (min-width: 750px) {
+    #content .alignfull {
+        max-width: 1000%;
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+        width: auto;
+        padding: 15px;
+   }
+    #content .alignwide {
+        margin: unset;
+        width: unset;
+        max-width: unset;
+        margin: 0 -250px;
+        max-width: 1300px;
+   }
+    #content .wp-block-group__inner-container {
+        max-width: 85.7143rem;
+        margin: auto;
+   }
+}
+@media (min-width: 750px) and (max-width: 1300px) {
+    #content .alignwide {
+        max-width: unset;
+        margin: 0 -150px;
+        max-width: 1100px;
+   }
+}
+@media (min-width: 750px) and (max-width: 1200px) {
+    #content .alignwide {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+   }
+}
+
+
+/* Footer
+   ======================================================================
+*/
+
+.footer-1 a,
+.footer-2 a {
+	color: white;
+}
+
+#colophon {
+	background: black;
+	padding: 50px 0;
+}
+
+/* Utilities
+   ======================================================================
+*/
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently not supported by any browser */
+}
